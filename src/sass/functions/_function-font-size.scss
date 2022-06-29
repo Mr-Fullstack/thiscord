@@ -1,0 +1,4 @@
+@function getFontSize($size) {
+  $sizeValue : 'px' +$size;
+  @return map-get($sizes, #{$sizeValue});
+}

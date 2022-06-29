@@ -1,0 +1,3 @@
+@mixin set-heading($size) {
+  font-size: getFontSize($size);
+}

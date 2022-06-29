@@ -1,0 +1,45 @@
+$colors: (
+  "primary_1":#646FD4,
+  "primary_2":#272727,
+  "primary_3":#FF4F6D,
+  "primary_4":#F9F9F9,
+  "primary_5":#3CB448,
+  "primary_6":#ECE536,
+  "secondary_1":#FFFFFF,
+  "secondary_2":#555555
+);
+$sizes: (
+  "px64":6.4rem,
+  "px44":4.4rem,
+  "px36":3.6rem,
+  "px28":2.8rem,
+  "px24":2.4rem,
+  "px20":2.0rem,
+  "px16":1.6rem,
+  "px14":1.4rem,
+  "px12": 1.2rem
+);
+
+$headings: (
+  "hero_1":map-get($sizes, 'px64'),
+  "hero_2":map-get($sizes, 'px44'),
+  "hero_3":map-get($sizes, 'px36'),
+  "hero_4":map-get($sizes, 'px24'),
+  "heading_1":map-get($sizes, 'px44'),
+  "heading_2":map-get($sizes, 'px36'),
+  "heading_3":map-get($sizes, 'px28'),
+  "heading_4":map-get($sizes, 'px20'),
+  "body_1":map-get($sizes, 'px20'),
+  "body_2":map-get($sizes, 'px16'),
+  "body_3":map-get($sizes, 'px14'),
+  "body_4":map-get($sizes, 'px12'),
+);
+
+
+$family: (
+  "hero": 'Russo One',
+  "default": 'Saira'
+);
+
+$line_height_default: 1.5;
+$line_height_heading: 1;

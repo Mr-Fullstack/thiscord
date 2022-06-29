@@ -1,0 +1,19 @@
+.select {
+
+  &__wrapper {}
+
+  &__selected__item {
+    border-radius: 100%;
+    padding: 6px 8px;
+
+    &:hover {
+      background-color: adjust-color(map-get($colors, 'secondary_1'), $alpha: 0.15);
+    }
+
+    &__icon {}
+  }
+
+  &__list {
+    &__item {}
+  }
+}

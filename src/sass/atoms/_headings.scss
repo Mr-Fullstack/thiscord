@@ -1,0 +1,51 @@
+.hero_1 {
+  @include set-font-size(64, 'heading');
+}
+
+.hero_2 {
+  @include set-font-size(44, 'heading');
+}
+
+.hero_3 {
+  @include set-font-size(36, 'heading');
+}
+
+.hero_4 {
+  @include set-font-size(24, 'heading');
+}
+
+.heading_1 {
+  @include set-font-size(44, 'heading');
+  font-weight: 500;
+}
+
+.heading_2 {
+  @include set-font-size(36, 'heading');
+  font-weight: 500;
+}
+
+.heading_3 {
+  @include set-font-size(28, 'heading');
+  font-weight: 500;
+}
+
+.heading_4 {
+  @include set-font-size(20, 'heading');
+  font-weight: 700;
+}
+
+.body_1 {
+  @include set-font-size(20);
+}
+
+.body_2 {
+  @include set-font-size(16);
+}
+
+.body_3 {
+  @include set-font-size(14);
+}
+
+.body_4 {
+  @include set-font-size(12);
+}

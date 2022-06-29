@@ -1,0 +1,9 @@
+@mixin set-font-size($size, $type: 'body') {
+  @if $type =='heading' {
+    @include set-heading($size);
+  }
+
+  @else if $type=='body' {
+    @include set-body($size);
+  }
+}

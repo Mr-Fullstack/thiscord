@@ -1,0 +1,3 @@
+@mixin set-font-family($family-name) {
+  font-family: map-get($family, #{$family-name})#{',sans-serif'};
+}

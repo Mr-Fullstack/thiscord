@@ -1,0 +1,32 @@
+.btn {
+  border: none;
+  padding: 20px;
+  cursor: pointer;
+  --bg-color: 'primary_4';
+
+  &_outline {
+    border: 1px solid map-get($colors, var(--bg-color));
+  }
+
+  &_rounded {
+    border-radius: 25px;
+  }
+
+  &_normal {
+    border: 8px;
+  }
+
+  &_full {
+    background-color: map-get($colors, var(--bg-color));
+  }
+
+  span {
+    color: map-get($colors, 'secondary_2');
+  }
+
+  @if (--bg-color : 'primary_1') {
+    span {
+      mix-blend-mode: difference;
+    }
+  }
+}

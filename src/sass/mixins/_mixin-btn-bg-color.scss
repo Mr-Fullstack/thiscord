@@ -1,0 +1,11 @@
+@mixin btn-bg-color() {
+
+  @each $color-name,
+  $color-value in $colors {
+    --bg-color: $color-name;
+
+    &_bg_#{$color-name} {
+      background-color: $color-value;
+    }
+  }
+}

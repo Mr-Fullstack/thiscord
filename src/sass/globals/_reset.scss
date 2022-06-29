@@ -1,0 +1,57 @@
+@import './vars';
+@import '../mixins/index';
+
+// reset 
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.4rem;
+  line-height: $line-height-default;
+}
+
+h1,
+h2,
+h3,
+h3,
+h4,
+p {
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+}
+
+img {
+  max-width: 100%;
+  border: none;
+}
+
+[class^="_he"]+[class^="_he"] {
+  margin-top: 1.6rem;
+}
+
+[class^="_hero_"] {
+  @include set-font-family('hero');
+}
+
+[class^="_heading_"],
+[class^="_hero_"] {
+  line-height: $line-height-heading;
+}
+
+[class^="_heading_"],
+[class^="_body_"] {
+  @include set-font-family('default');
+}
+
+[class^="_body_"] {
+  width: 560px;
+  max-width: 100%;
+}

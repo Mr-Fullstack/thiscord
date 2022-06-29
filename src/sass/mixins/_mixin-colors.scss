@@ -1,0 +1,9 @@
+@mixin set-colors() {
+
+  @each $color-name,
+  $color-value in $colors {
+    .cl_#{$color-name} {
+      color: $color-value ;
+    }
+  }
+}
