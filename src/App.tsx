@@ -5,10 +5,12 @@ import Home from './landing/pages/home/Home';
 import Page404 from './landing/pages/page404/Page404';
 import Signin from './landing/pages/signin/Signin';
 import Signup from './landing/pages/signup/Signup';
+import LanguageProvider from '@/contexts/LanguageProvider';
+import { Footer } from '@/components/Footer/Footer';
 
 function App() {
   return (
-    <React.Fragment>
+    <LanguageProvider>
       <Header />
       <Routes>
         <Route path='/' element={<Home />} />
@@ -16,8 +18,8 @@ function App() {
         <Route path='signup' element={<Signup />} />
         <Route path='*' element={<Page404 />} />
       </Routes>
-    </React.Fragment>
-
+      <Footer />
+    </LanguageProvider>
   )
 }
 

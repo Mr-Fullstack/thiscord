@@ -1,40 +1,21 @@
-import { Hero } from '@/components/Thypografy/Hero';
-import { Heading } from '@/components/Thypografy/Heading';
-import { Body } from '@/components/Thypografy/Body';
-import { Container, Row, Col } from '@/components/GridSystem';
+import { Container } from '@/components/GridSystem';
 import { Logo } from '@/components/Logo/Logo';
 import globalStyles from '@/sass/main.module.scss';
+import { SelectLanguage } from '@/components/SelectLanguage/SelectLanguage';
+import { useParams } from 'react-router-dom';
 
 
 export function Header() {
+
+  const { pathname } = window.location;
+  console.log(pathname)
+
   return (
-    <header className={globalStyles.header}>
+    <header className={globalStyles.header + " " + (pathname === '/' ? globalStyles.header_home : '')}>
       <Container>
-        <Logo />
-        <div className='select'>
-          <div className="select__wrapper">
-            <div className={globalStyles.select__selected__item}>
-              <div className="country">
-                <img className="country_flag" src='' />
-                <p className="country_name">Português, BRA</p>
-              </div>
-              <div className="select__selected__item__icon"></div>
-            </div>
-            <div className="select__list">
-              <div className="select__list__item">
-                <div className="country">
-                  <img className="country_flag" src='' />
-                  <p className="country_name">English, USA</p>
-                </div>
-              </div>
-              <div className="select__list__item">
-                <div className="country">
-                  <img className="country_flag" src='' />
-                  <p className="country_name">Português, BRA</p>
-                </div>
-              </div>
-            </div>
-          </div>
+        <div className={globalStyles.header_wrapper}>
+          <Logo />
+          <SelectLanguage />
         </div>
       </Container>
     </ header>

@@ -1,4 +1,14 @@
 .header {
   @extend %flex;
-  height: 36px;
+  // height: 36px;
+  padding: 20px 0px;
+}
+
+.header_wrapper {
+  @extend %flex;
+  justify-content: space-between;
+}
+
+.header_home {
+  background-color: map-get($colors, "primary_1");
 }

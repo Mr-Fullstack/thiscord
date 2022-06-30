@@ -1,9 +1,9 @@
 .section_hero {
   background-color: map-get($colors, "primary_1");
   height: 671px;
-  position: relative;
-  top: -36px;
-  z-index: -1;
+  // position: relative;
+  // top: -36px;
+  // z-index: -1;
   padding-top: 105px;
 
   [class^="_hero_"] {

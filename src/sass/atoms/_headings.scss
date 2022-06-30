@@ -49,3 +49,13 @@
 .body_4 {
   @include set-font-size(12);
 }
+
+@media (max-width:1200px) {
+  .hero_1 {
+    @include set-font-size(36, 'heading');
+  }
+
+  .hero_2 {
+    @include set-font-size(24, 'heading');
+  }
+}

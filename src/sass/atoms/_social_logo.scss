@@ -1,0 +1,27 @@
+.social_logo {
+  width: 25px;
+  height: 25px;
+  background-image: url('../../../src/globals/images/social_logo.svg');
+  background-size: cover;
+  display: inline-block;
+  background-repeat: no-repeat;
+  margin-right: 16px;
+}
+
+.social_logo_twitter {
+  background-position: 1px 0px;
+}
+
+.social_logo_facebook {
+
+  background-position: -37px 0px;
+}
+
+.social_logo_instagram {
+  background-position: -75px 0px;
+}
+
+.social_logo_youtube {
+
+  background-position: -113px 0px;
+}

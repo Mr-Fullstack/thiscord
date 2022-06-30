@@ -1,5 +1,9 @@
 import { ButtonHTMLAttributes } from "react";
 
+export interface ObjectKeyFindArray {
+  [key: string]: string | JSX.Element;
+}
+
 export interface ChildrenProps extends React.HTMLAttributes<HTMLDivElement> { }
 
 export interface ThypografyProps extends ChildrenProps {
@@ -13,3 +17,25 @@ export interface BtnProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   radius?: 'rounded' | 'normal';
   model?: 'outline' | 'full'
 }
+
+export interface PageMapProps {
+  title: string;
+  list: Array<PageLinkProps>;
+}
+
+export interface PageMapListLinksProps {
+  list: Array<PageLinkProps>;
+}
+
+export interface PageLinkProps {
+  name: string;
+  url: string;
+}
+
+export interface HeroClasseProps extends ObjectKeyFindArray {
+  [key: string]: JSX.Element;
+}
+export interface TextBodyClasseProps extends ObjectKeyFindArray {
+  [key: string]: string;
+}
+

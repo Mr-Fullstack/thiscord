@@ -1,0 +1,8 @@
+.page_link_name {
+  color: map-get($colors, 'primary_4');
+  text-decoration: none;
+
+  &:hover {
+    opacity: .5;
+  }
+}
