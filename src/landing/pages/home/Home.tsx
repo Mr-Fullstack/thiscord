@@ -1,31 +1,107 @@
-
-import globalStyles from '@/sass/main.module.scss';
+import React from 'react';
+import { appLanguage } from '@/contexts/LanguageProvider';
 import { Col, Container, Row } from '@/components/GridSystem';
 import { Hero } from '@/components/Thypografy/Hero';
+import { Btn } from '@/components/Btn/Btn';
+import { Heading } from '@/components/Thypografy/Heading';
+import { IconInstallDesktop } from '@/components/Icon/Icon';
+import home from '@/sass/main.module.scss';
 import desktop from '@/globals/images/desktop.svg';
-import Btn from '@/components/Btn/Btn';
-import { appLanguage } from '@/contexts/LanguageProvider';
-
+import friends from '@/globals/images/school_friends.svg';
+import club from '@/globals/images/breakfast_club.svg';
+import call from '@/globals/images/video_call.svg';
+import { Body } from './../../../components/Thypografy/Body';
 
 export default function Home() {
   const { t } = appLanguage();
+
+  React.useEffect(() => {
+    const offsetTop = 400;
+
+    const toggleFadeSection = (evt: any) => {
+      const sections = document.querySelectorAll(`.${home.js_move}`);
+      sections.forEach(item => {
+        if (item.getBoundingClientRect().top <= offsetTop) {
+          if (item.children[0].children[0].classList.contains(home.fade_out)) {
+            item.children[0].children[0].classList.remove(home.fade_out);
+          }
+          item.children[0].children[0].classList.add(home.fade_in);
+        }
+
+        if (item.getBoundingClientRect().top > offsetTop) {
+          item.children[0].children[0].classList.remove(home.fade_in);
+          item.children[0].children[0].classList.add(home.fade_out);
+        }
+      })
+    }
+    document.addEventListener("scroll", toggleFadeSection);
+
+    return () => document.removeEventListener("scroll", toggleFadeSection);
+  })
+
   return (
-    <div className={globalStyles.section_hero}>
-      <Container>
-        <Row>
-          <Col xl={7}>
-            <Hero size="x1" className={globalStyles.section_hero_title}>
-              {t('hero_message')}
-            </Hero>
+    <React.Fragment>
+      <section className={home.section_hero}>
+        <Container>
+          <Row>
+            <Col xl={7}>
+              <Hero size="x1" className={home.section_hero_title}>
+                {t('hero_message')}
+              </Hero>
+              <div>
+                <Btn title='download for windows'>
+                  <IconInstallDesktop />
+                </Btn>
+              </div>
+            </Col>
+            <Col xl={5}>
+              <img src={desktop} alt="desktop" />
+            </Col>
+          </Row>
+        </Container>
+      </section>
+      <section className={home.section_friends + " " + home.js_move}>
+        <Container>
+          <div className={home.section_wrapper}>
             <div>
-              <Btn title='download for windows' />
+              <Hero size="x1" className={home.section_hero_title}>
+                {t('friends_title')}
+              </Hero>
+              <Body size='x1'>
+                {t('friends_text')}
+              </Body>
             </div>
-          </Col>
-          <Col xl={5}>
-            <img src={desktop} alt="desktop" />
-          </Col>
-        </Row>
-      </Container>
-    </div>
+            <img src={friends} alt="friends" />
+          </div>
+        </Container>
+      </section>
+      <section className={home.section_club + " " + home.js_move}>
+        <Container>
+          <div className={home.section_wrapper + " " + home.section_wrapper_reverse}>
+            <div>
+              <Hero size="x1" className={home.section_hero_title}>
+                {t('club_title')}
+              </Hero>
+              <Body size='x1'>
+                {t('club_text')}
+              </Body>
+            </div>
+            <img src={club} alt="club" />
+          </div>
+        </Container>
+      </section>
+      <section className={home.section_call + " " + home.js_move}>
+        <Container>
+          <div className={home.section_wrapper + " " + home.section_wrapper_no_flex}>
+            <img src={call} alt="call" />
+            <div>
+              <Hero size="x2" className={home.section_hero_title}>
+                {t('call_title')}
+              </Hero>
+            </div>
+          </div>
+        </Container>
+      </section>
+    </React.Fragment>
   )
 }

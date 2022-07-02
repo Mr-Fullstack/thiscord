@@ -1,4 +1,6 @@
 .country {
   display: flex;
   width: 113px;
+  pointer-events: none;
+  align-items: center;
 }

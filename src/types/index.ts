@@ -1,13 +1,13 @@
 import { ButtonHTMLAttributes } from "react";
 
 export interface ObjectKeyFindArray {
-  [key: string]: string | JSX.Element;
+  [key: string]: string;
 }
 
 export interface ChildrenProps extends React.HTMLAttributes<HTMLDivElement> { }
 
 export interface ThypografyProps extends ChildrenProps {
-  size: 'x1' | 'x2' | 'x3' | 'x4';
+  size: 'x1' | 'x2' | 'x3' | 'x4' | 'x5';
   type?: 'heading' | 'hero' | 'body';
 }
 export interface BtnProps extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -15,7 +15,9 @@ export interface BtnProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   title: string;
   size?: string | number;
   radius?: 'rounded' | 'normal';
-  model?: 'outline' | 'full'
+  model?: 'outline' | 'full';
+  imgIcon?: string;
+  SvgIcon?: JSX.IntrinsicElements
 }
 
 export interface PageMapProps {
@@ -32,7 +34,7 @@ export interface PageLinkProps {
   url: string;
 }
 
-export interface HeroClasseProps extends ObjectKeyFindArray {
+export interface HeroClasseProps {
   [key: string]: JSX.Element;
 }
 export interface TextBodyClasseProps extends ObjectKeyFindArray {

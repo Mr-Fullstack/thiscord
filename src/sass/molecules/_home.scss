@@ -1,0 +1,175 @@
+.section_hero {
+  background-color: map-get($colors, "primary_1");
+  height: 671px;
+  // position: relative;
+  // top: -36px;
+  // z-index: -1;
+  padding-top: 105px;
+
+  [class^="_hero_"] {
+    line-height: $line-height-default;
+    color: map-get($colors, "primary_4");
+    width: 645px;
+    max-width: 100%;
+  }
+
+  @media screen and(max-width:1200px) {
+    height: 640px;
+    padding-top: 0px;
+    text-align: center;
+
+    .hero_1 {
+      @include set-font-size(44, 'heading');
+    }
+
+    img {
+      display: none;
+    }
+
+    background-image: url('../../src/globals/images/mobile.svg'),
+    linear-gradient(to right, map-get($colors, "primary_1"), map-get($colors, "primary_1"));
+    background-position: center 40.8vh;
+    background-size: 90%;
+    background-repeat: no-repeat;
+  }
+}
+
+%section {
+  padding: 124px 0px;
+
+  h1 {
+    color: map-get($colors , "primary_1");
+  }
+
+  .body_1 {
+    margin-top: 32px;
+  }
+
+
+  @media screen and (max-width:1200px) {
+
+    .hero_1 {
+      @include set-font-size(24, 'heading');
+    }
+
+    .body_1 {
+      @include set-font-size(16);
+    }
+  }
+
+  @media screen and (min-width:1200px) {
+    .body_1 {
+      margin-top: 64px;
+      width: 610px;
+    }
+
+    h1.hero_1 {
+      width: 610px;
+    }
+
+    img {
+      width: 449px;
+    }
+  }
+
+}
+
+%section_wrapper {
+  @media screen and (max-width:1200px) {
+    display: grid;
+
+    img {
+      grid-row: 1;
+      justify-self: center;
+      margin-bottom: 32px;
+      will-change: scroll-position;
+      transform: translateZ(0px)
+    }
+  }
+}
+
+.section_wrapper {
+  @extend %flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  h1,
+  h4 {
+    max-width: 100%;
+  }
+
+  &_reverse {
+    flex-direction: row-reverse;
+  }
+
+  &_no_flex {
+    display: block
+  }
+
+  @extend %section_wrapper;
+}
+
+.section_friends {
+  @extend %section;
+  background-color: map-get($colors , "primary_4");
+}
+
+.section_club {
+  @extend %section;
+  background-color: map-get($colors , "secondary_3");
+}
+
+.section_call {
+  @extend %section;
+  background-color: map-get($colors , "secondary_4");
+  text-align: center;
+  color: map-get($colors , "secondary_5");
+
+  @media screen and (min-width:1200px) {
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.js_move {
+  .section_wrapper {
+    position: relative;
+    opacity: 0;
+    top: 50px;
+    will-change: scroll-position;
+  }
+}
+
+.fade_in {
+  animation: fadeIn 1s ease forwards;
+
+}
+
+.fade_out {
+  animation: fadeOut 1s ease forwards;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    top: 0px;
+  }
+
+  to {
+    top: 50px;
+    opacity: 0;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    top: 50px;
+  }
+
+  to {
+    opacity: 1;
+    top: 0px;
+  }
+}

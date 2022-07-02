@@ -3,7 +3,7 @@ import { BtnProps } from '@/types/index';
 
 import globalStyles from '@/sass/main.module.scss';
 
-export default function Btn({ bgColor, onClick, title, size, model, radius, ...props }: BtnProps) {
+export function Btn({ children, bgColor, onClick, title, size, model, radius, ...props }: BtnProps) {
 
 
   const handlerCLick = (ev: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
@@ -35,8 +35,8 @@ export default function Btn({ bgColor, onClick, title, size, model, radius, ...p
   }
 
   return (
-    <button className={btnClasses()}
-      onClick={(evt) => handlerCLick(evt)} {...props}>
+    <button className={btnClasses()} onClick={(evt) => handlerCLick(evt)} {...props}>
+      {children && children}
       <span>{title}</span>
     </button>
   )

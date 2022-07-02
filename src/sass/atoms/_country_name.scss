@@ -1,4 +1,5 @@
 .country_name {
   color: map-get($colors , 'primary_4');
-  // margin-left: 4px;
+  margin-left: 4px;
+  pointer-events: none;
 }
