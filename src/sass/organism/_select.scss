@@ -1,6 +1,6 @@
 .select {
   width: 157px;
-
+  min-height: 32px;
   &__selected__item {
     @extend %flex;
     border-radius: 8px;
@@ -17,7 +17,7 @@
     border-radius: 10px;
     overflow: hidden;
     background-color: rgba(#FFFFFF, 0.15);
-    backdrop-filter: blur(1px);
+    backdrop-filter: blur(15px);
     position: relative;
     width: 100%;
     box-shadow: 0px 1px 2px #21212136;

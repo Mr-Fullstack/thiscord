@@ -1,32 +1,54 @@
 .btn {
+  // --bg-color:'primary_4';
   border: none;
   padding: 20px;
   cursor: pointer;
-  --bg-color: 'primary_4';
-
+  @extend %flex;
+  align-items: center;
+  justify-content: center;
+  color: map-get($colors, 'secondary_2');
+  background-color: map-get($colors, "primary_4");
+  width: fit-content;
+  height: 40px;
+  p{
+    width: fit-content;
+    font-weight: 500;
+  }
+  &:hover{
+    transition: all .3s;
+    box-shadow: 0px 0px 32px -16px rgba($color: #000000, $alpha: 0.50);
+  }
+  svg{
+    margin-right: 8px;
+  }
   &_outline {
     border: 1px solid map-get($colors, var(--bg-color));
   }
 
   &_rounded {
-    border-radius: 25px;
+    border-radius: 100px;
+    height: 56px;
   }
 
   &_normal {
-    border: 8px;
+    border-radius: 8px;
   }
 
   &_full {
-    background-color: map-get($colors, var(--bg-color));
+    width: 100%;
   }
 
-  span {
-    color: map-get($colors, 'secondary_2');
-  }
-
-  @if (--bg-color : 'primary_1') {
-    span {
+  &[class*="_bk_"]{
+    svg,
+    h5{
       mix-blend-mode: difference;
+    }
+  }
+  &[class*="_7_"],&[class*="_6_"]{
+    svg,
+    p{
+      mix-blend-mode: plus-lighter;
+       filter: brightness(1);
     }
   }
 }

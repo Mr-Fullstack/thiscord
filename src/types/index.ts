@@ -17,7 +17,8 @@ export interface BtnProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   radius?: 'rounded' | 'normal';
   model?: 'outline' | 'full';
   imgIcon?: string;
-  SvgIcon?: JSX.IntrinsicElements
+  SvgIcon?: JSX.IntrinsicElements;
+  fullWidth?:boolean
 }
 
 export interface PageMapProps {

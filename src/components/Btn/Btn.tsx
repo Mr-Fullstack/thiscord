@@ -2,8 +2,10 @@ import React from 'react'
 import { BtnProps } from '@/types/index';
 
 import globalStyles from '@/sass/main.module.scss';
+import { Heading } from '@/components/Thypografy/Heading';
+import { Body } from '../Thypografy/Body';
 
-export function Btn({ children, bgColor, onClick, title, size, model, radius, ...props }: BtnProps) {
+export function Btn({ fullWidth,children, bgColor, onClick, title, size, model, radius, ...props }: BtnProps) {
 
 
   const handlerCLick = (ev: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
@@ -16,18 +18,19 @@ export function Btn({ children, bgColor, onClick, title, size, model, radius, ..
     let bgClass = globalStyles.btn + ' ';
 
     if (model) {
-      bgClass += globalStyles[`btn_${model}`] + " "
+      bgClass += globalStyles[`btn_${model}`] + " ";
     }
-
-    else if (radius) {
-      bgClass += globalStyles[`btn_${radius}`] + " "
+    if (bgColor) {
+       bgClass += globalStyles[`bk_${bgColor}`] + " ";
     }
-
-    else if (bgColor) {
-      bgClass += globalStyles[`btn_${bgColor}`] + " "
+    if(fullWidth){
+      bgClass += globalStyles.btn_full + " " ; 
+    }
+    if (radius) {
+      bgClass += globalStyles[`btn_${radius}`] + " ";
     }
     else {
-      bgClass += globalStyles.btn_rounded + " " + globalStyles.btn_full
+      bgClass += globalStyles.btn_rounded + " " ;
     }
 
     return bgClass;
@@ -35,9 +38,9 @@ export function Btn({ children, bgColor, onClick, title, size, model, radius, ..
   }
 
   return (
-    <button className={btnClasses()} onClick={(evt) => handlerCLick(evt)} {...props}>
+    <button className={btnClasses()} onClick={(evt) => handlerCLick(evt)}  {...props}>
       {children && children}
-      <span>{title}</span>
+      <Body size='x2'>{title}</Body>
     </button>
   )
 }

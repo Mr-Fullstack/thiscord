@@ -9,7 +9,7 @@
   [class^="_hero_"] {
     line-height: $line-height-default;
     color: map-get($colors, "primary_4");
-    width: 645px;
+    width: 705px;
     max-width: 100%;
   }
 
@@ -33,7 +33,17 @@
     background-repeat: no-repeat;
   }
 }
-
+.cta{
+  @extend %flex;
+  align-items: flex-start;
+  justify-content:flex-start;
+  margin-top: 64px;
+  .btn{
+    &:last-child{
+      margin-left: 3.2rem;
+    }
+  }
+}
 %section {
   padding: 124px 0px;
 

@@ -1,0 +1,34 @@
+.form{
+    font-family: map-get($family, 'default' );
+    width: 400px;
+    max-width: 100%;
+    &_group{
+        margin-bottom: 20px;
+    }
+    input{
+        width: 100%;
+        height: 40px;
+        max-width: 100%;
+        padding: 14px 8px;
+        border-radius: 8px;
+        border: none;
+        background-color: map-get($colors , 'secondary_6' );
+        color: map-get($colors, "secondary_3" );
+        font-family: map-get($family, 'default' );
+        @extend .body_3;
+    }
+    label{
+        display: block;
+        text-transform: uppercase;
+        font-size: 1.2rem;
+        color: map-get($colors, "secondary_8" );
+        margin-bottom: 8px;
+        font-weight: 500;
+    }
+    @media screen and (max-width:1200px) {
+         padding: 0px;  
+    }
+}
+
+
+

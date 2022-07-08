@@ -20,7 +20,26 @@ const en_us_ditionary = {
   Jobs: 'Jobs',
   Privacy: 'Privacy',
   Developers: 'Developers',
-  Brand: 'Brand'
+  Brand: 'Brand',
+  qrCodeSignin:'Login with QR Code',
+  qrCodeInfo:'I scanned this code with ThisCord mobile app to log in immediately.',
+  authSignInTitle:'Welcome back!',
+  authSignMessage:'We are excited to see you here!',
+  authSignUpTitle:'Create an account',
+  email:'Email',
+  username:'Username',
+  password:'Password',
+  birthdate:'Birth date',
+  formPasswordRecovery:'Forgot password?',
+  formAccountCreate:'In need of an account?',
+  formRegister:'Register',
+  login:'Login',
+  formHasAccount:'I already have an account?',
+  continue:'Continue',
+  agreeRegister:'By registering, you agree to the',
+  terms:'terms of use',
+  privacy:'privacy policy',
+  and:'and'
 }
 
 const pt_br_ditionary = {
@@ -41,6 +60,25 @@ const pt_br_ditionary = {
   Privacy: 'Privacidade',
   Developers: 'Desenvolvedores',
   Brand: 'Marca',
+  qrCodeSignin:'Entrar com Código QR',
+  qrCodeInfo:'Escanei esse código com app móvel do ThisCord para fazer login imediatamente',
+  authSignInTitle:'Bem vindo de volta!',
+  authSignMessage:'Estamos animado em ver você por aqui!',
+  authSignUpTitle:'Criar uma conta',
+  email:'E-mail',
+  username:'Nome de usuário',
+  password:'Senha',
+  birthdate:'Data de nascimento',
+  formPasswordRecovery:'Esqueceu a senha?',
+  formAccountCreate:'Precisando de uma conta?',
+  formRegister:'Registre-se',
+  login:'Entrar',
+  formHasAccount:'Já tenho uma conta ?',
+  continue:'Continuar',
+  agreeRegister:'Ao se registrar, você concorda com os',
+  terms:'termos de uso',
+  privacy:'política de privacidade',
+  and:'e'
 }
 
 

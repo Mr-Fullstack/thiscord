@@ -2,20 +2,36 @@ import { Container } from '@/components/GridSystem';
 import { Logo } from '@/components/Logo/Logo';
 import globalStyles from '@/sass/main.module.scss';
 import { SelectLanguage } from '@/components/SelectLanguage/SelectLanguage';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
+import React from 'react';
+import { removePageName, setPageName } from '@/helpers/landing';
+import { Body } from '../Thypografy/Body';
 
 
 export function Header() {
 
   const { pathname } = window.location;
-  console.log(pathname)
+  const page = pathname === '/' ? 'home': pathname.replace('/','');
+
+  React.useEffect( ()=> {
+    setPageName(page);
+    return () => removePageName(page);
+  },[page])
 
   return (
-    <header className={globalStyles.header + " " + (pathname === '/' ? globalStyles.header_home : '')}>
+    <header className={ globalStyles.header + " " + ( page === 'home' ? globalStyles.header_home : '' )}>
       <Container>
-        <div className={globalStyles.header_wrapper}>
+        
+        <div className={ globalStyles.header_wrapper }>
           <Logo />
-          <SelectLanguage />
+            <nav className={globalStyles.header_main_nav}>
+              <SelectLanguage className={ page === 'signin' || page === 'signup' ?  globalStyles.nav_auth  :''} />
+              { page === 'home' &&
+              <Link to="signin" className={ globalStyles.btn + ' '+ globalStyles.btn_rounded  }>
+                <Body size='x5'>Entrar</Body>
+              </Link>   
+              }
+            </nav>
         </div>
       </Container>
     </ header>

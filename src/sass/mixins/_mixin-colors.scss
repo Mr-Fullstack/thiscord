@@ -3,7 +3,15 @@
   @each $color-name,
   $color-value in $colors {
     .cl_#{$color-name} {
-      color: $color-value ;
+      color: $color-value  !important;
     }
   }
+
+  @each $color-name,
+  $color-value in $colors {
+    .bk_#{$color-name} {
+      background-color: $color-value !important ;
+    }
+  }
+
 }
