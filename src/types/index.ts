@@ -10,15 +10,18 @@ export interface ThypografyProps extends ChildrenProps {
   size: 'x1' | 'x2' | 'x3' | 'x4' | 'x5';
   type?: 'heading' | 'hero' | 'body';
 }
+export interface ButtonDownloadProps extends BtnProps {
+  platform: 'ios' | 'android' | 'desktop' | 'web';
+}
 export interface BtnProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   bgColor?: string;
-  title: string;
+  title?: string;
   size?: string | number;
   radius?: 'rounded' | 'normal';
   model?: 'outline' | 'full';
   imgIcon?: string;
   SvgIcon?: JSX.IntrinsicElements;
-  fullWidth?:boolean
+  fullWidth?: boolean
 }
 
 export interface PageMapProps {

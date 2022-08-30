@@ -7,37 +7,55 @@
 
 .header_wrapper {
   @extend %flex;
-  justify-content:center;
+  justify-content: center;
 }
 
 .header_home {
   background-color: map-get($colors, "primary_1");
+  background-image: linear-gradient(to right, #2B316B, map-get($colors, "primary_1"));
+
   .header_wrapper {
-    justify-content:space-between;
+    justify-content: space-between;
   }
 }
 
-.header_main_nav{
+
+.header_main_nav {
   @extend %flex;
   align-items: center;
 
-  .select{
+  .select {
     margin-right: 64px;
   }
-  a.btn{
+
+  a.btn {
     height: 40px;
   }
 }
 
 @media screen and(max-width:1200px) {
-  .header_main_nav{
-    .select{
+
+  .header_home {
+    background-image: unset;
+  }
+
+  .header_main_nav {
+    .select {
       margin-right: 0px;
     }
+
+    a.btn {
+      display: none;
+    }
+  }
+
+  .header_wrapper {
+    justify-content: space-between;
   }
 }
+
 @media screen and (min-width:1200px) {
-  .nav_auth{
+  .nav_auth {
     position: absolute;
     right: 16px;
   }

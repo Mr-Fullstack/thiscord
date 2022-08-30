@@ -1,10 +1,15 @@
 .section_hero {
   background-color: map-get($colors, "primary_1");
+  background-image: url('../../src/globals/images/background_hero.png'), linear-gradient(to right, #2B316B, map-get($colors, "primary_1"));
   height: 671px;
+  background-size: cover;
+  background-position: center -10000vh, center center;
+  background-repeat: repeat;
   // position: relative;
   // top: -36px;
   // z-index: -1;
   padding-top: 105px;
+  animation: heroBackgroundDown 1000s infinite linear;
 
   [class^="_hero_"] {
     line-height: $line-height-default;
@@ -13,12 +18,21 @@
     max-width: 100%;
   }
 
+  .btn {
+    &:hover {
+      box-shadow: 0px 4px 16px -2px #2d336e;
+    }
+  }
+
   @media screen and(max-width:1200px) {
     height: 640px;
     padding-top: 0px;
     text-align: center;
 
     .hero_1 {
+      margin-top: calc(3.9rem - 20px);
+      text-align: center;
+      width: 100%;
       @include set-font-size(44, 'heading');
     }
 
@@ -26,24 +40,99 @@
       display: none;
     }
 
-    background-image: url('../../src/globals/images/mobile.svg'),
-    linear-gradient(to right, map-get($colors, "primary_1"), map-get($colors, "primary_1"));
-    background-position: center 40.8vh;
-    background-size: 90%;
-    background-repeat: no-repeat;
+    // background-image: url('../../src/globals/images/mobile.svg'),
+    // linear-gradient(to right, map-get($colors, "primary_1"), map-get($colors, "primary_1"));
+    // background-position: center 40.8vh;
+    // background-size: 90%;
+    // background-repeat: no-repeat;
+    background-image: url('../../src/globals/images/mobile.png'),
+    linear-gradient(to top, #2B316B, map-get($colors, "primary_1"));
+    background-position: center 40.8vh,
+    center;
+    background-size: 90%,
+    cover;
+    background-repeat: no-repeat,
+    repeat;
+    animation: heroBackgroundTop 1s forwards;
+  }
+
+  @media screen and(max-width:769px) {
+    .hero_1 {
+      @include set-font-size(3.7, 'heading');
+    }
+  }
+
+}
+
+@keyframes heroBackgroundDown {
+  to {
+    background-position: center 10000vh, center center;
   }
 }
-.cta{
-  @extend %flex;
-  align-items: flex-start;
-  justify-content:flex-start;
+
+@keyframes heroBackgroundTop {
+  from {
+    background-position: center 100vh, center center;
+  }
+
+  to {
+    background-position: center 45vh, center center
+  }
+}
+
+.cta {
   margin-top: 64px;
-  .btn{
-    &:last-child{
+  position: relative;
+
+  .btn_download_mobile,
+  .btn_download_desktop {
+    @extend %flex;
+  }
+
+  .btn {
+    &:last-child {
       margin-left: 3.2rem;
     }
   }
+
+  .btn_download_mobile {
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    top: 12rem;
+    width: 100%;
+    left: 0px;
+
+    .btn {
+      &:last-child {
+        margin-left: 0rem;
+      }
+    }
+  }
+
+  .btn_download_desktop {
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
+
+
+  @media screen and (max-width:1200px) {
+    .btn_download_desktop {
+      visibility: hidden;
+      display: none;
+    }
+  }
+
+  @media screen and (min-width:1200px) {
+    .btn_download_mobile {
+      visibility: hidden;
+      display: none;
+    }
+  }
+
 }
+
 %section {
   padding: 124px 0px;
 
@@ -65,9 +154,22 @@
     .body_1 {
       @include set-font-size(16);
     }
+
+    .btn_download_desktop {
+      display: none;
+      visibility: hidden;
+    }
+
+
   }
 
   @media screen and (min-width:1200px) {
+
+    .btn_download_mobile {
+      display: none;
+      visibility: hidden;
+    }
+
     .body_1 {
       margin-top: 64px;
       width: 610px;
@@ -133,13 +235,46 @@
   @extend %section;
   background-color: map-get($colors , "secondary_4");
   text-align: center;
-  color: map-get($colors , "secondary_5");
+  color: map-get($colors , "secondary_9");
+
+  p {
+    margin: 32px auto;
+  }
+
+  img {
+    margin-bottom: 16.4rem;
+  }
 
   @media screen and (min-width:1200px) {
     img {
       width: 100%;
     }
   }
+
+  .section_call_cta {
+    text-align: center;
+    margin-top: 6.4rem;
+  }
+
+  .btn_download_desktop,
+  .btn_download_mobile {
+    display: inline-block;
+  }
+
+  @media screen and (max-width:1200px) {
+    .hero_2 {
+      @include set-font-size(24, 'heading');
+    }
+
+    .btn_download_desktop {
+      display: none;
+    }
+
+    .section_call_cta {
+      margin-top: 3.2rem;
+    }
+  }
+
 }
 
 .js_move {

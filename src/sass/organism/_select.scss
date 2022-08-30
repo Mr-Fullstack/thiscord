@@ -1,6 +1,7 @@
 .select {
   width: 157px;
   min-height: 32px;
+
   &__selected__item {
     @extend %flex;
     border-radius: 8px;
@@ -25,6 +26,7 @@
     margin-bottom: -100%;
     opacity: 0;
     top: -40px;
+    display: none;
 
     &__item {
       padding: 8px;
@@ -41,6 +43,10 @@
     position: relative;
   }
 
+  &__selected__item:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+  }
+
   &_active {
     .select {
       &__selected__item {
@@ -50,6 +56,7 @@
       &__list {
         pointer-events: all;
         animation: showIn .3s ease-in forwards;
+        display: block;
       }
     }
   }

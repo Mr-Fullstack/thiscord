@@ -2,10 +2,12 @@ import React from 'react'
 import style from '@/sass/main.module.scss';
 import { ChildrenProps } from '@/types';
 
-export function AuthBox({children}:ChildrenProps) {
+interface AuthBoxProps extends ChildrenProps { }
+export function AuthBox({ children }: AuthBoxProps) {
     return (
-        <div className={style.auth_box}>
+        <div className={style.auth_box} >
             {children}
         </div>
     )
 }
+

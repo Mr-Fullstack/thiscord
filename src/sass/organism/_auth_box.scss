@@ -1,53 +1,82 @@
-.auth_box{
-    background-color: map-get($colors , 'secondary_9' );
+.auth_box {
+    background-color: map-get($colors , 'primary_2');
     border-radius: 20px;
-    display: flex;
     padding: 32px;
-    justify-content: space-between;
     width: fit-content;
-    margin: 0px auto;
-    animation: authShowIn .5s forwards;
     opacity: 0;
     transform: scale(.8) translateY(-150px) translateZ(0px);
-    max-width: 100%;
-    >div{
+    margin: 0 auto;
+    animation: authShowIn .5s forwards;
+
+    h4,
+    p {
+        color: map-get($colors, "secondary_3");
         max-width: 100%;
     }
-    h4,p{
-        color: map-get($colors, "secondary_3" );
-        max-width: 100%;
-    }
-    form{
+
+    form {
         margin-top: 32px;
-        .btn{
-            background-color: map-get($colors , 'primary_1' );
-            color: map-get($colors , 'secondary_3' );
+
+        .btn {
+            background-color: map-get($colors , 'primary_1');
+            color: map-get($colors , 'secondary_3');
             margin-top: 32px;
         }
     }
 
-    .qr_code_area{
+    .qr_code_area {
         margin-left: 64px;
         width: 250px;
         text-align: center;
-        p{
+
+        p {
             margin-top: 16px;
         }
-        h4{
+
+        h4 {
             margin-top: 32px;
         }
     }
-    .btn + p{
+
+    .btn+p {
         margin-top: 20px;
-        color: map-get($colors, "secondary_10" );
+        color: map-get($colors, "secondary_8");
         // line-height: 1;
         // width: 305px;
     }
 }
 
-.auth_greetings{
+.auth_close {
+    text-align: right;
+    width: 100%;
+    color: map-get($colors, 'secondary_8');
+    cursor: pointer;
+
+    svg {
+        display: inline-block;
+    }
+}
+
+.auth_header {
+    margin-bottom: 1.8rem;
+}
+
+.auth_body {
+    display: flex;
+    justify-content: space-between;
+    width: fit-content;
+    margin: 0px auto;
+    max-width: 100%;
+
+    >div {
+        max-width: 100%;
+    }
+}
+
+.auth_greetings {
     text-align: center;
-    p{
+
+    p {
         margin-top: 16px;
         max-width: 100%;
         width: 400px;
@@ -56,29 +85,33 @@
 }
 
 @media screen and (max-width:1200px) {
-    .auth_box{
+    .auth_box {
         border-radius: 0;
-        padding:0rem;
+        padding: 0rem;
         min-height: 80vh;
         padding-bottom: 32px;
         background-color: unset;
-        .qr_code_area{
+        max-width: 100%;
+
+        .qr_code_area {
             display: none;
         }
     }
 }
+
 @keyframes authShowIn {
 
-    70%{
+    70% {
         transform: scale(1) translateY(0px) translateZ(0px);
         opacity: 1;
     }
-    90%{
+
+    90% {
         transform: scale(1) translateY(2px) translateZ(0px);
         opacity: 1;
     }
 
-    100%{
+    100% {
         transform: scale(1) translateY(0px) translateZ(0px);
         opacity: 1;
     }

@@ -6,7 +6,7 @@ import { appLanguage } from '@/contexts/LanguageProvider';
 import iconDown from '@/globals/icons/keyboard_arrow_down.svg';
 import { ChildrenProps } from '@/types';
 
-export function SelectLanguage({className}:ChildrenProps) {
+export function SelectLanguage({ className }: ChildrenProps) {
 
   const { language, languageList, switchLanguage } = appLanguage();
   const [active, setActive] = React.useState(false);
@@ -32,7 +32,7 @@ export function SelectLanguage({className}:ChildrenProps) {
   }
 
   return (
-    <div className={globalStyles.select + " " + (active ? globalStyles.select_active : " " ) + " " +className}>
+    <div className={globalStyles.select + " " + (active ? globalStyles.select_active : " ") + " " + className}>
       <div className={globalStyles.select__wrapper} onClick={(evt) => handlerActive(evt)} >
         <div className={globalStyles.select__selected__item} id="selected-item">
           <div className={globalStyles.country}>

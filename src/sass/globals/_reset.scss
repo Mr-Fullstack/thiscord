@@ -16,16 +16,20 @@ html {
 body {
   font-size: 1.4rem;
   line-height: $line-height-default;
+
   &.signin,
-  &.signup{
-      height: 100vh;
+  &.signup {
+    height: 100vh;
+    display: grid;
+
+    #root {
       display: grid;
-      #root{
-        display: grid;
-      }
-      background-image: url('../../globals/images/background_auth.png'), linear-gradient(to bottom, map-get($colors,'primary_1') 50% ,map-get($colors,'secondary_5') 50% ) ;
-      background-repeat: no-repeat;
-      background-size: cover;
+    }
+
+    background-image: url('../../globals/images/background_auth.png'),
+    linear-gradient(to bottom, map-get($colors, 'primary_1') 50%, map-get($colors, 'secondary_5') 50%);
+    background-repeat: no-repeat;
+    background-size: cover;
   }
 }
 
@@ -39,11 +43,14 @@ p {
   font-style: normal;
   font-weight: 400;
 }
-a{
-  color: map-get($colors , 'primary_1' );
+
+a {
+  color: map-get($colors , 'primary_1');
   text-decoration: none;
   line-height: 1;
+  font-size: 1.3rem;
 }
+
 img {
   max-width: 100%;
   border: none;
@@ -78,21 +85,26 @@ img {
     width: auto;
     max-width: 100%;
   }
-body {
 
-  &.signin,
-  &.signup{
-    header{
-      background-color: map-get($colors,'secondary_9') ;
-      z-index: 1;
-      ._header_wrapper_11xnd_2{
-        justify-content: space-between;
+  body {
+
+    &.signin,
+    &.signup {
+      background-image: unset;
+      // background-color: map-get($colors, 'secondary_9');
+      background-color: map-get($colors , 'primary_2');
+
+      header {
+        // background-color: map-get($colors, 'secondary_9');
+        background-color: map-get($colors , 'primary_2');
+        z-index: 1;
+
+        ._header_wrapper_11xnd_2 {
+          justify-content: space-between;
+        }
       }
     }
-    background-image: unset;
-    background-color: map-get($colors,'secondary_9') ;
   }
-}
 }
 
 @media (max-width:569px) {
@@ -100,4 +112,3 @@ body {
     font-size: 2.5vw;
   }
 }
-
